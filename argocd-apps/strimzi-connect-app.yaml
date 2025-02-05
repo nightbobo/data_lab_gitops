@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-kafka-connect
+  namespace: argocd
+spec:
+  project: kafka-connect-project
+  source:
+    repoURL: https://boboAccountTokenForGit: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@github.com/nightbobo/data-lab-connect.git
+    targetRevision: main
+    path: strimzi-gitops/kafka-connect
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kafka-connect
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

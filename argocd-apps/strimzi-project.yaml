@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: kafka-connect-project
+  namespace: argocd
+spec:
+  description: "Project to manage Kafka Connect resources via GitOps"
+  sourceRepos:
+    - https://boboAccountTokenForGit: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@github.com/nightbobo/data-lab-connect.git
+  destinations:
+    - namespace: kafka-connect
+      server: https://kubernetes.default.svc
+    - namespace: kafka-cluster
+      server: https://kubernetes.default.svc
+    - namespace: argocd
+      server: https://kubernetes.default.svc            
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
