@@ -19,7 +19,7 @@ spec:
         - name: schema-registry
           image: confluentinc/cp-schema-registry:7.8.0
           ports:
-            - containerPort: 8081
+            - containerPort: 9081
           env:
             - name: SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS
               value: "kafka-cluster-kafka-bootstrap.kafka-cluster:9092"
@@ -38,8 +38,8 @@ spec:
             - name: SCHEMA_REGISTRY_GROUP_ID
               value: "schema-registry-cluster"
             - name: SCHEMA_REGISTRY_LISTENERS
-              value: "http://0.0.0.0:8081"
-                #          command: [ "sh", "-c", "export SCHEMA_REGISTRY_LISTENERS=http://$POD_NAME.schema-registry.kafka-cluster.svc.cluster.local:8081 && /etc/confluent/docker/run" ]
+              value: "http://0.0.0.0:9081"
+                #          command: [ "sh", "-c", "export SCHEMA_REGISTRY_LISTENERS=http://$POD_NAME.schema-registry.kafka-cluster.svc.cluster.local:9081 && /etc/confluent/docker/run" ]
 ---
 apiVersion: v1
 kind: Service
@@ -49,7 +49,7 @@ metadata:
 spec:
   clusterIP: None  # Headless Service 설정
   ports:
-    - port: 8081
-      targetPort: 8081
+    - port: 9081
+      targetPort: 9081
   selector:
     app: schema-registry

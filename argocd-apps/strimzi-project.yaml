@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: kafka-connect-project
+  name: kafka-third-part-project
   namespace: argocd
 spec:
   description: "Project to manage Kafka Connect resources via GitOps"
