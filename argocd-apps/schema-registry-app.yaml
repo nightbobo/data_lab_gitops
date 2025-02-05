@@ -4,7 +4,7 @@ metadata:
   name: gitops-kafka-schema-registry
   namespace: argocd
 spec:
-  project: kafka-connect-project
+  project: kafka-third-part-project
   source:
     repoURL: https://boboAccountTokenForGit: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@github.com/nightbobo/data-lab-connect.git
     targetRevision: main
