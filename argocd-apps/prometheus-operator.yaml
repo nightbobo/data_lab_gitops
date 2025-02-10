@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-kafka-connect
+  name: gitops-prometheus-operator
   namespace: argocd
 spec:
   project: kafka-third-part-project
   source:
     repoURL: https://github.com/nightbobo/data_lab_gitops.git
     targetRevision: main
-    path: strimzi-gitops/kafka-cluster
+    path: strimzi-gitops/prometheus
   destination:
     server: https://kubernetes.default.svc
-    namespace: connect-persistent
+    namespace: prometheus
   syncPolicy:
     automated:
       prune: true

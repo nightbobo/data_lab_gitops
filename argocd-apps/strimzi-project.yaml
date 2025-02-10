@@ -8,14 +8,8 @@ spec:
   sourceRepos:
     - https://github.com/nightbobo/data_lab_gitops.git
   destinations:
-    - namespace: kafka-connect
+    - namespace: connect-persistent
       server: https://kubernetes.default.svc
-    - namespace: kafka-cluster
-      server: https://kubernetes.default.svc
-    - namespace: argocd
-      server: https://kubernetes.default.svc            
-    - namespace: strimzi-operator
-      server: https://kubernetes.default.svc            
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"

@@ -1,0 +1,15 @@
+kubectl run kafka-consumer --rm -it --image=confluentinc/cp-kafka:latest -- \
+  bash -c "/usr/bin/kafka-console-consumer --bootstrap-server kafka-cluster-kafka-bootstrap.kafka-cluster.svc.cluster.local:9092 --topic test-topic --from-beginning" 
+
+kubectl run kafka-producer --rm -it --image=confluentinc/cp-kafka:latest -- \
+  bash -c "/usr/bin/kafka-console-producer --bootstrap-server kafka-cluster-kafka-bootstrap.kafka-cluster.svc.cluster.local:9092 --topic test-topic"
+
+
+
+
+
+
+sed -E -i '/[[:space:]]*namespace: [a-zA-Z0-9-]*$/s/namespace:[[:space:]]*[a-zA-Z0-9-]*$/namespace: prometheus/' prometheus-operator-deployment.yaml
+
+sed -i '' -e '/[[:space:]]*namespace: [a-zA-Z0-9-]*$/s/namespace:[[:space:]]*[a-zA-Z0-9-]*$/namespace: prometheus/' prometheus-operator-deployment.yaml
+
