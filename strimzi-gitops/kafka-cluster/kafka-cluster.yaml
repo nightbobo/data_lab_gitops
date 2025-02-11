@@ -2,7 +2,7 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaNodePool
 metadata:
   name: controller
-  namespace: connect-persistent
+  # namespace: kafka-cluster
   labels:
     strimzi.io/cluster: kafka-cluster
 spec:
@@ -21,7 +21,7 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaNodePool
 metadata:
   name: broker
-  namespace: connect-persistent
+  # namespace: connect-persistent
   labels:
     strimzi.io/cluster: kafka-cluster
 spec:
@@ -40,7 +40,7 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: kafka-cluster
-  namespace: connect-persistent
+  # namespace: connect-persistent
   annotations:
     strimzi.io/node-pools: enabled
     strimzi.io/kraft: enabled
@@ -99,7 +99,7 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: kafka-metrics
-  namespace: connect-persistent
+  # namespace: connect-persistent
   labels:
     app: strimzi
 data:
