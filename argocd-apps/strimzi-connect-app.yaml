@@ -8,7 +8,7 @@ spec:
  source:
    repoURL: https://github.com/nightbobo/data_lab_gitops.git
    targetRevision: main
-   path: strimzi-gitops/kafka-connect
+   path: strimzi-gitops/connect
  destination:
    server: https://kubernetes.default.svc
    namespace: kafka-connect
