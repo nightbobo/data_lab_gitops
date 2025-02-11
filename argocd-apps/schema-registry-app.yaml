@@ -1,20 +1,20 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: gitops-kafka-schema-registry
-#  namespace: argocd
-#spec:
-#  project: kafka-third-part-project
-#  source:
-#    repoURL: https://github.com/nightbobo/data_lab_gitops.git
-#    targetRevision: main
-#    path: strimzi-gitops/schema-registry 
-#  destination:
-#    server: https://kubernetes.default.svc
-#    namespace: kafka-cluster
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
-#    syncOptions:
-#      - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+ name: gitops-kafka-schema-registry
+ namespace: argocd
+spec:
+ project: kafka-third-part-project
+ source:
+   repoURL: https://github.com/nightbobo/data_lab_gitops.git
+   targetRevision: main
+   path: strimzi-gitops/schema-registry 
+ destination:
+   server: https://kubernetes.default.svc
+   namespace: kafka-connect
+ syncPolicy:
+   automated:
+     prune: true
+     selfHeal: true
+   syncOptions:
+     - CreateNamespace=true

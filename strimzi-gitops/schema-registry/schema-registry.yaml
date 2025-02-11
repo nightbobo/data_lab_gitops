@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: schema-registry
-  namespace: kafka-connect
+  # namespace: kafka-connect
   labels:
     app: schema-registry
 spec:
