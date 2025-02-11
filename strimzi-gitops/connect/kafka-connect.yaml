@@ -14,7 +14,7 @@ spec:
   bootstrapServers: kafka-cluster-kafka-bootstrap.kafka-cluster:9093
   tls:
     trustedCertificates:
-      - secretName: my-cluster-cluster-ca-cert
+      - secretName: kafka-cluster-cluster-ca-cert
         pattern: "*.crt"
   config:
     group.id: connect-cluster
