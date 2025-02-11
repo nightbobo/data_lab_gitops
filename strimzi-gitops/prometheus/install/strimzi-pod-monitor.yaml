@@ -10,7 +10,7 @@ spec:
       strimzi.io/kind: cluster-operator
   namespaceSelector:
     matchNames:
-      - connect-persistent
+      - kafka-cluster
       - kafka-connect
   podMetricsEndpoints:
   - path: /metrics
@@ -28,7 +28,7 @@ spec:
       app.kubernetes.io/name: entity-operator
   namespaceSelector:
     matchNames:
-      - connect-persistent
+      - kafka-cluster
       - kafka-connect
   podMetricsEndpoints:
   - path: /metrics
@@ -46,7 +46,7 @@ spec:
       strimzi.io/kind: KafkaBridge
   namespaceSelector:
     matchNames:
-      - connect-persistent
+      - kafka-cluster
       - kafka-connect
   podMetricsEndpoints:
   - path: /metrics
@@ -66,7 +66,7 @@ spec:
         values: ["Kafka", "KafkaConnect", "KafkaMirrorMaker", "KafkaMirrorMaker2"]
   namespaceSelector:
     matchNames:
-      - connect-persistent
+      - kafka-cluster
       - kafka-connect
   podMetricsEndpoints:
   - path: /metrics
