@@ -11,7 +11,7 @@ spec:
     path: strimzi-gitops/kafka-cluster
   destination:
     server: https://kubernetes.default.svc
-    namespace: kafka-cluster+
+    namespace: kafka-cluster
   syncPolicy:
     automated:
       prune: true
