@@ -4,8 +4,8 @@ metadata:
   name: kafka-connect-cluster
   labels:
     app: kafka-connect-cluster
-  annotations:
-    strimzi.io/use-connector-resources: "true"    
+  # annotations:
+  #   strimzi.io/use-connector-resources: "true"    
 spec:
   version: 3.9.0
   replicas: 1
