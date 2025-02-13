@@ -14,7 +14,7 @@ metadata:
     strimzi.io/cluster: kafka-connect-cluster
 spec:
   class: org.apache.kafka.connect.file.FileStreamSourceConnector
-  tasksMax: 1
+  tasksMax: 2
   config:
     file: "/opt/kafka/LICENSE"
     topic: my-topic
